@@ -1,0 +1,9 @@
+{
+  "name": "kit-database-manager",
+  "main": "worker.js",
+  "compatibility_date": "2026-07-09",
+  "assets": {
+    "directory": "./",
+    "binding": "ASSETS"
+  }
+}
