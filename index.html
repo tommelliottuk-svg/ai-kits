@@ -463,6 +463,9 @@ Respond with ONLY valid JSON, no markdown code fences, no preamble, in exactly t
       })
     });
     const data = await response.json();
+    if(!response.ok || !data.content){
+      throw new Error(data.error?.message || JSON.stringify(data));
+    }
     const textBlock = data.content.find(b=>b.type==='text');
     let clean = textBlock.text.replace(/```json|```/g,'').trim();
     const parsed = JSON.parse(clean);
